@@ -19,7 +19,7 @@ export default function Hero() {
       </h1>
       <div className="hero-bottom">
         <p className="hero-sub">
-          <b>Voiture. Quad. Buggy.</b> {tr.hero.sub}
+          <b>{tr.hero.vehicles}</b> {tr.hero.sub}
         </p>
         <div className="hero-cta">
           <a href="#fleet" className="btn">

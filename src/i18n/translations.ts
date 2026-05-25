@@ -11,6 +11,7 @@ export interface Translations {
     line1: string
     line2: string
     line3: string
+    vehicles: string
     sub: string
     ctaFleet: string
     ctaWhatsapp: string
@@ -87,6 +88,7 @@ const fr: Translations = {
     line1: 'Prends',
     line2: 'le volant',
     line3: 'à fond.',
+    vehicles: 'Voiture. Quad. Buggy.',
     sub: 'La location de véhicules la plus fun du Bénin, du luxe en ville à l\'adrénaline sur le sable.',
     ctaFleet: 'Voir la flotte',
     ctaWhatsapp: 'WhatsApp',
@@ -199,6 +201,7 @@ const en: Translations = {
     line1: 'Take',
     line2: 'the wheel',
     line3: 'full throttle.',
+    vehicles: 'Car. Quad. Buggy.',
     sub: "Benin's most thrilling vehicle rental, city luxury to beachside adrenaline.",
     ctaFleet: 'View fleet',
     ctaWhatsapp: 'WhatsApp',

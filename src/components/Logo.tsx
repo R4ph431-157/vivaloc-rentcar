@@ -1,7 +1,7 @@
 export default function Logo() {
   return (
     <div className="logo">
-      VIVA<b>LOC</b>
+      <img src="/assets/logo.png" alt="VIVALOC" className="logo-img" />
     </div>
   )
 }

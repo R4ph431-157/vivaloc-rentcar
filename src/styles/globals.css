@@ -105,20 +105,17 @@ nav.scrolled {
   border-bottom: 1px solid var(--line);
 }
 .logo {
-  font-family: 'Archivo'; font-weight: 900;
-  font-size: 23px;
-  letter-spacing: -.5px;
-  display: flex; align-items: center; gap: 7px;
+  display: flex; align-items: center;
 }
-.logo b { color: var(--lime); }
-.spark {
-  width: 11px; height: 11px;
-  background: var(--lime);
-  box-shadow: 0 0 16px var(--lime);
-  animation: spin 4s linear infinite;
-  clip-path: polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+.logo-img {
+  height: 72px;
+  width: auto;
+  display: block;
+  filter: brightness(2) contrast(1.1) saturate(1.2);
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+.fgrid .logo-img {
+  height: 100px;
+}
 
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
@@ -503,7 +500,6 @@ nav.scrolled {
 /* ── FOOTER ── */
 footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 40px; margin-top: 40px; }
 .fgrid { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-.fgrid .logo { font-size: 34px; }
 .ftag { color: var(--muted); font-size: 15px; margin-top: 16px; max-width: 260px; line-height: 1.6; }
 .fcol h5 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
 .fcol a { display: block; color: var(--ink); opacity: .75; font-size: 15px; margin-bottom: 11px; transition: .25s; }
