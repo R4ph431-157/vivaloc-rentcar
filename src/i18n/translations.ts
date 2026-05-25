@@ -111,7 +111,7 @@ const fr: Translations = {
         description: 'Adrénaline sur sable et pistes. Le combo parfait plage + week-end entre potes.',
       },
       {
-        category: 'Buggy · Side-by-side',
+        category: 'Buggy · Côte-à-côte',
         title: ['Buggys', '4 places'],
         description: "L'expérience hors-piste ultime. En groupe, pour dévorer la côte et les dunes.",
       },

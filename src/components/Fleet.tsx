@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/useReveal'
+import { useEffect, useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import Reveal from './Reveal'
 import { ArrowDiagonal, CarIcon, QuadIcon, BuggyIcon } from './icons'
@@ -28,6 +29,15 @@ interface FleetCardProps {
 
 function FleetCard({ item, category, title, description, price, perDay }: FleetCardProps) {
   const ref = useReveal<HTMLElement>()
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = true
+    v.play().catch(() => {})
+  }, [])
+
   return (
     <article ref={ref} className="fcard reveal">
       <div className={`glow ${item.glowClass}`} />
@@ -45,13 +55,16 @@ function FleetCard({ item, category, title, description, price, perDay }: FleetC
       )}
       {item.video && (
         <video
+          ref={videoRef}
           className="fcard-vid"
-          src={item.video}
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={item.video} type="video/mp4" />
+        </video>
       )}
       <div className={`edge ${item.edgeClass}`} />
       <span className="fnum">{item.num}</span>
