@@ -12,7 +12,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -171,6 +171,7 @@ nav.scrolled {
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex; flex-direction: column; justify-content: center;
   padding: 120px clamp(18px, 4vw, 52px) 0;
   max-width: var(--maxw); margin: 0 auto;
@@ -524,12 +525,22 @@ footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 4
 }
 
 .fbot {
-  max-width: var(--maxw); margin: 48px auto 0; padding-top: 24px;
+  max-width: var(--maxw); margin: 48px auto 0; padding-top: 28px;
   border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-  color: var(--muted); font-size: 13px;
+  display: flex; justify-content: center;
 }
-.fbot .demo { color: var(--lime); }
+.fcopy {
+  display: inline-flex; align-items: center; gap: 18px;
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+}
+.fcopy b { color: var(--lime); font-weight: 900; font-family: 'Archivo'; }
+.fcopy-line {
+  display: block; width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(198,255,0,.35));
+}
+.fcopy-line:last-child {
+  background: linear-gradient(90deg, rgba(198,255,0,.35), transparent);
+}
 
 /* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(46px); transition: opacity .8s, transform .8s; }
@@ -549,10 +560,7 @@ footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 4
     border-bottom: 1px solid var(--line);
     box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
   }
-  /* Links match desktop nav exactly — same size, weight, color, spacing */
-  .nav-links.open a:not(.btn) {
-    padding: 10px 0;
-  }
+  .nav-links.open a:not(.btn) { padding: 10px 0; }
   .burger { display: flex; }
   .fleet { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
@@ -560,104 +568,10 @@ footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 4
   .scell:last-child { border-bottom: none; }
   .contact-grid { grid-template-columns: 1fr; }
   .wrow { grid-template-columns: 40px 1fr; gap: 18px; }
+  /* prevent hover pseudo-element from causing horizontal overflow */
+  .wrow::before { left: 0; right: 0; }
+  /* disable translateX hover effects on touch devices */
+  .clink:hover { transform: none; box-shadow: none; border-color: var(--lime); }
+  .wrow:hover .wt { padding-left: 6px; }
 }
 
-/* ── SITE FLOW-IN ── */
-.site-wrap {
-  opacity: 0;
-  transition: opacity 1.1s cubic-bezier(.4, 0, .2, 1);
-}
-.site-wrap.site-in {
-  opacity: 1;
-}
-
-/* ── INTRO ── */
-.intro {
-  position: fixed; inset: 0; z-index: 99999;
-  background: var(--bg);
-  display: flex; align-items: center; justify-content: center;
-  transition: opacity .75s cubic-bezier(.4,0,.2,1);
-}
-.intro-out { opacity: 0; pointer-events: none; }
-
-.intro-glow {
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 70% 55% at 30% 40%, rgba(123,43,255,.22) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 45% at 75% 65%, rgba(255,31,107,.18) 0%, transparent 60%);
-  animation: float1 14s ease-in-out infinite;
-}
-
-.intro-video {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0; transition: opacity .35s ease;
-}
-.intro-video.active { opacity: 1; }
-
-.intro-scene {
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background:
-    /* cinematic bars */
-    linear-gradient(to bottom, rgba(0,0,0,.82) 0%, transparent 16%),
-    linear-gradient(to top,    rgba(0,0,0,.82) 0%, transparent 16%),
-    /* edge vignette */
-    radial-gradient(ellipse 110% 100% at 50% 50%, transparent 38%, rgba(0,0,0,.72) 100%),
-    /* colour grade — violet left, magenta right */
-    linear-gradient(120deg, rgba(123,43,255,.14) 0%, transparent 45%, rgba(255,31,107,.10) 100%);
-  /* grain on top of the video */
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(to bottom, rgba(0,0,0,.82) 0%, transparent 16%),
-    linear-gradient(to top,    rgba(0,0,0,.82) 0%, transparent 16%),
-    radial-gradient(ellipse 110% 100% at 50% 50%, transparent 38%, rgba(0,0,0,.72) 100%),
-    linear-gradient(120deg, rgba(123,43,255,.14) 0%, transparent 45%, rgba(255,31,107,.10) 100%);
-  background-blend-mode: overlay, normal, normal, normal, normal;
-  opacity: .92;
-}
-
-.intro-idle {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 36px;
-  cursor: pointer;
-  animation: fadeUp .9s .15s both;
-}
-.intro-idle:hover .intro-logo { color: var(--ink); }
-
-.intro-logo {
-  font-size: clamp(48px, 12vw, 96px);
-  letter-spacing: -1px;
-  transition: transform .4s cubic-bezier(.2,.8,.2,1);
-}
-.intro-idle:hover .intro-logo { transform: scale(1.04); }
-
-.intro-hint {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'Archivo'; font-size: 11px; font-weight: 800;
-  letter-spacing: 4px; text-transform: uppercase;
-  color: var(--muted);
-  animation: hintPulse 2.2s ease-in-out infinite;
-}
-.intro-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--lime); box-shadow: 0 0 16px var(--lime);
-  animation: blink 1.2s infinite;
-  flex-shrink: 0;
-}
-
-.intro-skip {
-  position: absolute; bottom: 36px; right: clamp(18px, 4vw, 52px);
-  z-index: 3;
-  font-family: 'Archivo'; font-size: 11px; font-weight: 800;
-  letter-spacing: 2.5px; text-transform: uppercase;
-  color: rgba(243,255,233,.4); background: transparent; border: none;
-  cursor: pointer; transition: color .25s;
-  padding: 8px 0;
-}
-.intro-skip:hover { color: var(--lime); }
-
-@keyframes hintPulse {
-  0%, 100% { opacity: .45; }
-  50% { opacity: 1; }
-}

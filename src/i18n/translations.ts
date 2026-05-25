@@ -87,14 +87,14 @@ const fr: Translations = {
     line1: 'Prends',
     line2: 'le volant',
     line3: 'à fond.',
-    sub: 'La location de véhicules la plus fun du Bénin — du luxe en ville à l\'adrénaline sur le sable.',
+    sub: 'La location de véhicules la plus fun du Bénin, du luxe en ville à l\'adrénaline sur le sable.',
     ctaFleet: 'Voir la flotte',
     ctaWhatsapp: 'WhatsApp',
   },
   fleet: {
     eyebrow: 'La flotte',
     heading: ['Choisis ta', 'machine'],
-    sub: 'Entretenues, prêtes, livrées où tu veux. Voici un aperçu — la flotte complète arrive bientôt.',
+    sub: 'Entretenues, prêtes, livrées où tu veux. Voici un aperçu - la flotte complète arrive bientôt.',
     price: 'Sur devis',
     perDay: '/ jour',
     items: [
@@ -129,7 +129,7 @@ const fr: Translations = {
     headingEm: 'une loc.',
     rows: [
       { title: 'Assurance & entretien inclus', desc: 'Tu prends les clés, on gère le reste. Zéro stress.' },
-      { title: 'Livré où tu es', desc: 'Aéroport, hôtel, maison — on amène le véhicule à toi.' },
+      { title: 'Livré où tu es', desc: 'Aéroport, hôtel, maison - on amène le véhicule à toi.' },
       { title: 'Réservation par DM', desc: 'Réponse rapide WhatsApp & Insta. Pas de paperasse.' },
       { title: 'Jour · semaine · mois', desc: 'Tarifs flexibles selon ton projet et ta durée.' },
     ],
@@ -155,13 +155,13 @@ const fr: Translations = {
     line1: 'TA PROCHAINE',
     line2: 'AVENTURE',
     line3: 'DÉMARRE ICI',
-    sub: 'Du bitume de Cotonou aux dunes de la côte — VIVALOC te donne les clés.',
+    sub: 'Du bitume de Cotonou aux dunes de la côte, VIVALOC te donne les clés.',
     cta: 'Réserver un véhicule',
   },
   contact: {
     heading: 'Prêt à',
     headingEm: 'rouler ?',
-    sub: 'Envoie un message — réponse rapide avec dispos et tarifs. Toutes tes questions par DM.',
+    sub: 'Envoie un message, réponse rapide avec dispos et tarifs. Toutes tes questions par DM.',
     badge: 'Bientôt plus grand',
     crightHeading: 'Une flotte qui grandit. Une vision qui décolle.',
     comingSoon: [
@@ -241,7 +241,7 @@ const en: Translations = {
     headingEm: 'a rental.',
     rows: [
       { title: 'Insurance & maintenance included', desc: 'You take the keys, we handle the rest. Zero stress.' },
-      { title: 'Delivered where you are', desc: 'Airport, hotel, home — we bring the vehicle to you.' },
+      { title: 'Delivered where you are', desc: 'Airport, hotel, home - we bring the vehicle to you.' },
       { title: 'Book by DM', desc: 'Fast WhatsApp & Insta replies. No paperwork.' },
       { title: 'Day · week · month', desc: 'Flexible rates tailored to your project and duration.' },
     ],

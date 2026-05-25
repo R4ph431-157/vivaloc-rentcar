@@ -34,7 +34,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="fbot">
-        <span>{tr.footer.copyright}</span>
+        <div className="fcopy">
+          <span className="fcopy-line" />
+          <span className="fcopy-text">© 2026 <b>VIVALOC</b> · Cotonou, Bénin</span>
+          <span className="fcopy-line" />
+        </div>
       </div>
     </footer>
   )

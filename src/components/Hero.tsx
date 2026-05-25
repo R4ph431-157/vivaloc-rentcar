@@ -25,7 +25,7 @@ export default function Hero() {
           <a href="#fleet" className="btn">
             {tr.hero.ctaFleet} <ArrowRight />
           </a>
-          <a href="#contact" className="btn alt">{tr.hero.ctaWhatsapp}</a>
+          <a href="https://wa.me/2290129811111" target="_blank" rel="noopener noreferrer" className="btn alt">{tr.hero.ctaWhatsapp}</a>
         </div>
       </div>
     </section>
