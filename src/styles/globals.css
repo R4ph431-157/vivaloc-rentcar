@@ -530,8 +530,9 @@ footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 4
   font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
 }
 .fcopy b { color: var(--lime); font-weight: 900; font-family: 'Archivo'; }
+.fcopy-text { white-space: nowrap; }
 .fcopy-line {
-  display: block; width: 48px; height: 1px;
+  display: block; width: 48px; height: 1px; flex-shrink: 1; min-width: 0;
   background: linear-gradient(90deg, transparent, rgba(198,255,0,.35));
 }
 .fcopy-line:last-child {
