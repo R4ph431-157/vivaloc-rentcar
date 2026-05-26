@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 export function useCursor() {
   useEffect(() => {
+    if (window.matchMedia('(hover: none)').matches) return
     const cursor = document.querySelector<HTMLElement>('.cursor')
     const cursorD = document.querySelector<HTMLElement>('.cursor-d')
     if (!cursor || !cursorD) return

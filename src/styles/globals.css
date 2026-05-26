@@ -569,5 +569,9 @@ footer { border-top: 2px solid var(--lime); padding: 60px clamp(18px,4vw,52px) 4
   /* disable translateX hover effects on touch devices */
   .clink:hover { transform: none; box-shadow: none; border-color: var(--lime); }
   .wrow:hover .wt { padding-left: 6px; }
+  /* stop aurora animations — blobs stay visible as static glows */
+  .aurora::before, .aurora::after, .aurora .blob3 { animation: none; }
+  /* grain: switch off fixed compositing layer */
+  body::after { position: absolute; }
 }
 

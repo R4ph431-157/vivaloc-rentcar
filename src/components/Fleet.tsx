@@ -61,7 +61,7 @@ function FleetCard({ item, category, title, description, price, perDay }: FleetC
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
         >
           <source src={item.video} type="video/mp4" />
         </video>
