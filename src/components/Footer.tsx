@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="fbot">
         <div className="fcopy">
           <span className="fcopy-line" />
-          <span className="fcopy-text">© 2026 <b>VIVALOC</b> · Cotonou, Bénin</span>
+          <span className="fcopy-text">© 2026 <b><span style={{color:'#ffffff'}}>VIVA</span><span style={{color:'#e63946'}}>LOC</span></b> · Cotonou, Bénin</span>
           <span className="fcopy-line" />
         </div>
       </div>
